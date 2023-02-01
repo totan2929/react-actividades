@@ -1,13 +1,10 @@
-import {actividades as data} from "../../actividades";
-import { useState, useEffect } from "react";
-
+import ActividadCard from "./ActividadCard";
+import { useContext } from "react";
+import { ActividadContext } from "../context/ActividadContext";
 
 const ListaActividades = () => {
-  const [actividades, setActividades] = useState([]);
-
-  useEffect(() => {
-    setActividades(data)
-  }, [])
+  
+  const {actividades} =useContext(ActividadContext);
 
   if(actividades.length === 0) {
     return <h1> No hay Actividades</h1>
@@ -15,9 +12,7 @@ const ListaActividades = () => {
   return (
     <div>
       {actividades.map((actividad) => (
-        <div key={actividad.id}>
-            <h1>{actividad.title}</h1>
-        </div>
+        <ActividadCard key={actividad.id} actividad={actividad}/>
       ))}
     </div>
   );

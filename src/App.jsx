@@ -1,12 +1,13 @@
-import ActividadForm from './components/ActividadForm'
-import ListaActividades from './components/ListaActividades'
+import ActividadForm from "./components/ActividadForm";
+import ListaActividades from "./components/ListaActividades";
+
 const App = () => {
   return (
     <>
-    <ActividadForm/>
-    <ListaActividades/>
+      <ActividadForm />
+      <ListaActividades />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
